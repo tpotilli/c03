@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 09:47:17 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/09/27 10:04:58 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:48:52 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ int	ft_strlen(char *str)
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	int				j;
 
 	i = 0;
 	j = ft_strlen(dest);
-	while (dest[i] && nb > 0)
+	while (src[i] && i < nb)
 	{
-		dest[j + i] = src[i];
+		dest[j] = src[i];
 		i++;
-		nb--;
+		j++;
 	}
-	dest[j + i] = '\0';
+	dest[j] = '\0';
 	return (dest);
 }
